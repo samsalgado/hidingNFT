@@ -1,10 +1,10 @@
 const {expect } = require('chai');
 
 describe("Hiding", function(){
-  it("SHOULD RETURN CORRECT NAME", async function() {
+  it("SHOULD RETURN CORRECT NAME AND SYMBOL", async function() {
     const Hiding = await hre.ethers.getContractFactory("Hiding");
-    const hidingDeployed = await Hiding.deploy("Hiding", "RASH");
+    const hidingDeployed = await Hiding.deploy("Hiding");
     await hidingDeployed.deployed();
-    expect(await hidingDeployed.name()).to.equal("Hiding");
+   expect (hidingDeployed.ERC721()).to.equal("Hiding", "RASH");
   });
 });
